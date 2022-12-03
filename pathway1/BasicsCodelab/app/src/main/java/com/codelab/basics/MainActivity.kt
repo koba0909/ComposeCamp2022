@@ -80,6 +80,18 @@ fun Greetings(
 
 @Composable
 fun Greeting(name: String) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primary
+        ),
+        modifier = Modifier.padding(vertical = 4.dp, horizontal = 8.dp)
+    ) {
+        CardContent(name)
+    }
+}
+
+@Composable
+private fun CardContent(name: String) {
     var expanded by remember {
         mutableStateOf(false)
     }
@@ -108,6 +120,14 @@ fun Greeting(name: String) {
                         fontWeight = FontWeight.ExtraBold
                     )
                 )
+                if (expanded) {
+                    Text(
+                        text = (
+                            "Composem ipsum color sit lazy, " +
+                                "padding theme elit, sed do bouncy. "
+                            ).repeat(4)
+                    )
+                }
             }
             IconButton(
                 onClick = { expanded = !expanded }

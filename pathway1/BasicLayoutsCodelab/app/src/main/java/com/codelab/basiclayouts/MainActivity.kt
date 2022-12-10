@@ -95,7 +95,8 @@ fun AlignYourBodyElement(
             text = stringResource(text),
             style = MaterialTheme.typography.h3,
             modifier = Modifier.paddingFromBaseline(
-                top = 24.dp, bottom = 8.dp
+                top = 24.dp,
+                bottom = 8.dp
             )
         )
     }
@@ -106,7 +107,25 @@ fun AlignYourBodyElement(
 fun FavoriteCollectionCard(
     modifier: Modifier = Modifier
 ) {
-    // Implement composable here
+    Surface(
+        shape = MaterialTheme.shapes.small,
+        modifier = modifier
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.width(192.dp)
+        ) {
+            Image(
+                painter = painterResource(R.drawable.fc2_nature_meditations),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.size(56.dp)
+            )
+            Text(
+                text = stringResource(R.string.fc2_nature_meditations)
+            )
+        }
+    }
 }
 
 // Step: Align your body row - Arrangements
